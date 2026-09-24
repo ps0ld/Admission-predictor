@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admission Intelligence &mdash; AI Admission Prediction System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="landing">
+        <div class="landing-content">
+            <div class="landing-mark"><span class="dot"></span>ADMISSION INTELLIGENCE</div>
+
+            <h1>Know your admission odds <span class="accent-word">before you apply.</span></h1>
+
+            <p class="lede">
+                A machine learning system trained on academic performance and entrance
+                exam data, built to estimate admission probability with transparent,
+                factor-by-factor reasoning &mdash; not a guess, a calculation.
+            </p>
+
+            <div class="landing-stats">
+                <div class="landing-stat">
+                    <div class="value">{{ accuracy if accuracy else '82' }}%</div>
+                    <div class="label">Model accuracy</div>
+                </div>
+                <div class="landing-stat">
+                    <div class="value">Random Forest</div>
+                    <div class="label">Algorithm</div>
+                </div>
+                <div class="landing-stat">
+                    <div class="value">Real-time</div>
+                    <div class="label">Inference</div>
+                </div>
+            </div>
+
+            <div class="landing-actions">
+                <a href="/dashboard" class="btn-primary">Launch Predictor</a>
+                <span class="landing-credit">Trained &amp; ready to use</span>
+            </div>
+        </div>
+
+        <div class="landing-visual">
+            <canvas id="networkCanvas"></canvas>
+        </div>
+
+        <div class="landing-footer">Developed by <b>PS</b></div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/landing.js') }}"></script>
+</body>
+</html>
